@@ -96,42 +96,12 @@ public class AutomaticController : MonoBehaviour
         }
     }
 
-
-
-
-
     /* given a command, finds how long it should take, sets it
     also resets the command timer :)*/
     public void setTimers(Command command){
         commandTimer = 0;
         maxCommandTimer = commandToMaxTime[command];
 
-    }
-
-    public void setMaxTimer(){
-
-    }
-
-
-
-    public void TurnLeftOnClick(){
-        GiveCommand(Command.TURN_LEFT);
-    }
-
-    public void TurnRightOnClick(){
-        GiveCommand(Command.TURN_RIGHT);
-    }
-
-    public void SwerveLeftOnClick(){
-        GiveCommand(Command.SWERVE_LEFT);
-    }
-
-    public void SwerveRightOnClick(){
-        GiveCommand(Command.SWERVE_RIGHT);
-    }
-
-    public void BrakeOnClick(){
-        GiveCommand(Command.BRAKE);
     }
 
 }
