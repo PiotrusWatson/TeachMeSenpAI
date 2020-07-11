@@ -58,6 +58,16 @@ public class AutomaticController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Clamp z rotation between -30 and 30 degrees
+        Vector3 rot = transform.eulerAngles;
+        if(rot.z > 30){
+            rot -= new Vector3(0,0,1) * Time.deltaTime * 10;
+            transform.eulerAngles = rot;
+        } else if(rot.z < -30){
+            rot += new Vector3(0,0,1) * Time.deltaTime * 10;
+            transform.eulerAngles = rot;
+        }
+        
         if (commandTimer < maxCommandTimer){
             commandTimer += Time.unscaledDeltaTime;
 
