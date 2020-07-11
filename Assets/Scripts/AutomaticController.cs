@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT}
+/* To add a command, add the logic here, change the enum (in automatic controller, and add a public function to carcommands).
+this is badly handled i know :(*/
 
+public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT}
 public class AutomaticController : MonoBehaviour
 {
 
@@ -89,6 +91,24 @@ public class AutomaticController : MonoBehaviour
         }
     }
 
+
+
+
+
+    /* given a command, finds how long it should take, sets it
+    also resets the command timer :)*/
+    public void setTimers(Command command){
+        commandTimer = 0;
+        maxCommandTimer = commandToMaxTime[command];
+
+    }
+
+    public void setMaxTimer(){
+
+    }
+
+
+
     public void TurnLeftOnClick(){
         GiveCommand(Command.TURN_LEFT);
     }
@@ -108,20 +128,5 @@ public class AutomaticController : MonoBehaviour
     public void BrakeOnClick(){
         GiveCommand(Command.BRAKE);
     }
-
-
-
-    /* given a command, finds how long it should take, sets it
-    also resets the command timer :)*/
-    public void setTimers(Command command){
-        commandTimer = 0;
-        maxCommandTimer = commandToMaxTime[command];
-
-    }
-
-    public void setMaxTimer(){
-
-    }
-
 
 }
