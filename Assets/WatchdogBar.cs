@@ -13,10 +13,21 @@ public class WatchdogBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (slider.value >= 1)
+            exceededWatchdogTolerance();
+
+
         /*Have the slider and decrease over time, increase when CTRL is pressed*/
         if (Input.GetKey(KeyCode.LeftControl))
             slider.value += increaseRate;
         else
             slider.value -= decayRate;
+    }
+
+
+    /*Game over function called when the intolerance is maxed out*/
+    private void exceededWatchdogTolerance ()
+    {
+        Debug.Log("GAME OVER!!!");
     }
 }
