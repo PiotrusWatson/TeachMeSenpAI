@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class DashboardController : MonoBehaviour
 {
     public GameObject buttonDashboardTemplate;
+
+    public GameObject topDownCamera;
+    GameObject mainCamera;
     GameObject buttonDashboard;
     SmoothMouseLook mouseLook;
 
@@ -15,9 +18,12 @@ public class DashboardController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        mainCamera = Camera.main.gameObject;
         autoScript = GetComponent<AutomaticController>();
         buttonDashboard = GameObject.FindGameObjectWithTag("Buttons");
-        
+        if (topDownCamera == null){
+            topDownCamera = GameObject.Find("TopDownCamera");
+        }
         mouseLook = Camera.main.GetComponent<SmoothMouseLook>();
     }
 
@@ -34,6 +40,15 @@ public class DashboardController : MonoBehaviour
         else{
             buttonDashboard.SetActive(false);
             mouseLook.enabled = true;
+        }
+
+        if (Input.GetButton("Tab")){
+            topDownCamera.SetActive(true);
+            mainCamera.SetActive(false);
+        }
+        else{
+            topDownCamera.SetActive(false);
+            mainCamera.SetActive(true);
         }
     }
 }

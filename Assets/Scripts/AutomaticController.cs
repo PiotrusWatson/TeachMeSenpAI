@@ -26,11 +26,6 @@ public class AutomaticController : MonoBehaviour
 
     
     Dictionary<Command, float> commandToMaxTime; 
-
-    void remakeDictSmiley(){
-        
-    }
-    
     
 
     // Start is called before the first frame update
