@@ -21,6 +21,8 @@ public class AutomaticController : MonoBehaviour
     public float swervingMaxTime;
     public float brakingMaxTime;
     public float slowingMaxTime;
+    private Command lastCommand;
+    private float lastTimer = 0;
 
     
     Dictionary<Command, float> commandToMaxTime; 
@@ -63,15 +65,26 @@ public class AutomaticController : MonoBehaviour
     {
         if (commandTimer < maxCommandTimer){
             commandTimer += Time.unscaledDeltaTime;
+
+            if(lastTimer <= swervingMaxTime/2 && commandTimer >= swervingMaxTime/2){
+                if(lastCommand == Command.SWERVE_LEFT){
+                    motor.setSteering(1f);
+                } else if (lastCommand == Command.SWERVE_RIGHT){
+                    motor.setSteering(-1f);
+                }
+            }
+
+            lastTimer = commandTimer;
         }
         else{
             motor.setMotor(1.0f);
-            motor.setSteering(Random.Range(-1.0f, 1.0f));
+            motor.setSteering(Random.Range(-0.5f, 0.5f));
         }
 
     }
 
     public void GiveCommand(Command command){
+        lastCommand = command;
         setTimers(command);
         switch(command){
             case Command.SWERVE_LEFT:
