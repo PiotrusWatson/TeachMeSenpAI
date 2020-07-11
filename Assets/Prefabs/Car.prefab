@@ -863,9 +863,12 @@ GameObject:
   - component: {fileID: 1240977706}
   - component: {fileID: 1240977705}
   - component: {fileID: 1240977704}
+  - component: {fileID: 6856391642104706722}
+  - component: {fileID: 7165439108256388480}
+  - component: {fileID: 1837096266537909574}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1130,7 +1133,7 @@ Animator:
   m_GameObject: {fileID: 5536222550792562977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 50bda1c471fd04d799a2e1a211ae02b1, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1153,6 +1156,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 41390e54e8fceddb9a67b2c317ed47de, type: 2}
   engineStart: {fileID: 8300000, guid: 80f16b395bf309a12991cbd589a25cb1, type: 3}
+--- !u!114 &6856391642104706722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb744b0a6fbe49e43a6b310797cc5340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AINavigatorTemplate: {fileID: 7415930793532881123, guid: 061e6a0f00f0e3e4386e2c5d1215e750,
+    type: 3}
+  AINavigator: {fileID: 0}
+  turningMaxTime: 4
+  swervingMaxTime: 2
+  brakingMaxTime: 3
+--- !u!114 &7165439108256388480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ab118952131e42899ca86050ea438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axles:
+  - leftWheel: {fileID: 5536222551057354631}
+    rightWheel: {fileID: 5536222550021459312}
+    usingMotor: 0
+    usingSteering: 1
+  - leftWheel: {fileID: 5536222549921574568}
+    rightWheel: {fileID: 5536222549025577871}
+    usingMotor: 0
+    usingSteering: 0
+  maxTorque: 700
+  maxSteeringAngle: 20
+--- !u!114 &1837096266537909574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49e46b3125e3304f894b17e8c0db018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDashboardTemplate: {fileID: 0}
 --- !u!1 &5536222551057354633
 GameObject:
   m_ObjectHideFlags: 0

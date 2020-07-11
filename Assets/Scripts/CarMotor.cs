@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* Basic ass controller for a car stolen from an Official Unity Tutorial */
-public class CarController : MonoBehaviour
+public class CarMotor : MonoBehaviour
 {
     public List<AxleInfo> axles;
     public float maxTorque;
@@ -12,14 +12,20 @@ public class CarController : MonoBehaviour
 
     float amountOfMotor;
     float amountOfSteering;
+
+    public void setMotor(float motorAmount){
+        amountOfMotor = maxTorque * motorAmount;
+    }
+
+    public void setSteering(float steeringAmount){
+        amountOfSteering = maxSteeringAngle * steeringAmount;
+    }
     void Start()
     {
-        
     }
 
     void Update(){
-        amountOfMotor = maxTorque * Input.GetAxis("Vertical");
-        amountOfSteering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        
     }
     // Update is called once per frame
     void FixedUpdate()
