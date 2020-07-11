@@ -804,9 +804,10 @@ MonoBehaviour:
   AINavigatorTemplate: {fileID: 7415930793532881123, guid: 061e6a0f00f0e3e4386e2c5d1215e750,
     type: 3}
   AINavigator: {fileID: 0}
-  turningMaxTime: 4
-  swervingMaxTime: 2
+  turningMaxTime: 3
+  swervingMaxTime: 1.5
   brakingMaxTime: 3
+  slowingMaxTime: 0
 --- !u!114 &1837096266537909574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +820,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49e46b3125e3304f894b17e8c0db018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonDashboardTemplate: {fileID: 0}
+  canvasTemplate: {fileID: 7461431724710383169, guid: c73ec5c2cf6f77541a2e707ce53a4b61,
+    type: 3}
+  topDownCameraTemplate: {fileID: 2934693640425808164, guid: d2bcc381c17032f4d825b45a2689d11e,
+    type: 3}
 --- !u!1 &5536222551057354633
 GameObject:
   m_ObjectHideFlags: 0

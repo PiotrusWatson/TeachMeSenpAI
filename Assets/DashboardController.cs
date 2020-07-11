@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class DashboardController : MonoBehaviour
 {
-    public GameObject buttonDashboardTemplate;
+    public GameObject canvasTemplate;
+    GameObject canvas;
+    public GameObject topDownCameraTemplate;
 
-    public GameObject topDownCamera;
+    GameObject topDownCamera;
     GameObject mainCamera;
     GameObject buttonDashboard;
+    
     SmoothMouseLook mouseLook;
 
     AutomaticController autoScript;
@@ -20,10 +23,22 @@ public class DashboardController : MonoBehaviour
     {
         mainCamera = Camera.main.gameObject;
         autoScript = GetComponent<AutomaticController>();
-        buttonDashboard = GameObject.FindGameObjectWithTag("Buttons");
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject check = GameObject.FindGameObjectWithTag("Buttons");
+        topDownCamera = GameObject.Find("TopDownCamera");
         if (topDownCamera == null){
-            topDownCamera = GameObject.Find("TopDownCamera");
+            topDownCamera = Instantiate(topDownCameraTemplate, topDownCameraTemplate.transform.position, topDownCameraTemplate.transform.rotation);
         }
+
+        if (canvas != null && check == null){
+            Destroy(canvas);
+            canvas = Instantiate(canvasTemplate);
+        }
+        
+        if (canvas == null) {
+            canvas = Instantiate(canvasTemplate);
+        }
+        
         mouseLook = Camera.main.GetComponent<SmoothMouseLook>();
     }
 
@@ -34,11 +49,11 @@ public class DashboardController : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Jump")){
-            buttonDashboard.SetActive(true);
+            toggleDashboard(true);
             mouseLook.enabled = false;
         }
         else{
-            buttonDashboard.SetActive(false);
+            toggleDashboard(false);
             mouseLook.enabled = true;
         }
 
@@ -50,5 +65,17 @@ public class DashboardController : MonoBehaviour
             topDownCamera.SetActive(false);
             mainCamera.SetActive(true);
         }
+    }
+
+    void toggleDashboard(bool isActive){
+         foreach (Transform child in canvas.transform){
+             Debug.Log(child.name);
+                if (child.gameObject.CompareTag("Buttons")){
+                    child.gameObject.SetActive(isActive);
+                }
+                else{
+                    child.gameObject.SetActive(!isActive);
+                }
+            }
     }
 }
