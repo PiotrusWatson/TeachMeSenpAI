@@ -1174,6 +1174,7 @@ MonoBehaviour:
   turningMaxTime: 4
   swervingMaxTime: 2
   brakingMaxTime: 3
+  slowingMaxTime: 5
 --- !u!114 &7165439108256388480
 MonoBehaviour:
   m_ObjectHideFlags: 0

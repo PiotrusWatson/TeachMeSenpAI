@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/* To add a command, add the logic here, change the enum (in automatic controller, and add a public function to carcommands).
-this is badly handled i know :(*/
+/* To add a command, add the logic here, change the enum (in automatic controller) */
 
-public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT}
+public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT, SLOW_DOWN}
+
 public class AutomaticController : MonoBehaviour
 {
 
@@ -20,6 +20,7 @@ public class AutomaticController : MonoBehaviour
     public float turningMaxTime;
     public float swervingMaxTime;
     public float brakingMaxTime;
+    public float slowingMaxTime;
 
     
     Dictionary<Command, float> commandToMaxTime; 
@@ -40,7 +41,8 @@ public class AutomaticController : MonoBehaviour
         {Command.SWERVE_RIGHT, swervingMaxTime},
         {Command.TURN_LEFT, turningMaxTime},
         {Command.TURN_RIGHT, turningMaxTime},
-        {Command.BRAKE, brakingMaxTime}
+        {Command.BRAKE, brakingMaxTime},
+        {Command.SLOW_DOWN, slowingMaxTime}
 
     };
 
@@ -86,6 +88,9 @@ public class AutomaticController : MonoBehaviour
                 break;
             case Command.TURN_RIGHT:
                 motor.setSteering(1f);
+                break;
+            case Command.SLOW_DOWN:
+                motor.setMotor(0.3f);
                 break;
 
         }
