@@ -859,9 +859,13 @@ GameObject:
   - component: {fileID: 5536222550792563007}
   - component: {fileID: 5536222550792563006}
   - component: {fileID: 5536222550792563004}
+  - component: {fileID: 1694730059}
+  - component: {fileID: 1694730062}
+  - component: {fileID: 1694730063}
+  - component: {fileID: 2321543689733885883}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -922,6 +926,62 @@ MonoBehaviour:
     usingSteering: 0
   maxTorque: 400
   maxSteeringAngle: 20
+--- !u!114 &1694730059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f326507ba60f4c438d6fe496846ef02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1694730062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed623daeadba7f46a65b8b4a9a6984b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1694730063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb744b0a6fbe49e43a6b310797cc5340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AINavigatorTemplate: {fileID: 7415930793532881123, guid: 061e6a0f00f0e3e4386e2c5d1215e750,
+    type: 3}
+  AINavigator: {fileID: 0}
+  turningMaxTime: 3
+  swervingMaxTime: 1
+  brakingMaxTime: 2
+--- !u!114 &2321543689733885883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536222550792562977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49e46b3125e3304f894b17e8c0db018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDashboardTemplate: {fileID: 3134474217709203431, guid: 5289fba3a8f4864419a2e386452eb079,
+    type: 3}
 --- !u!1 &5536222551057354633
 GameObject:
   m_ObjectHideFlags: 0

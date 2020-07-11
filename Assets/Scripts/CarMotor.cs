@@ -25,8 +25,7 @@ public class CarMotor : MonoBehaviour
     }
 
     void Update(){
-        amountOfMotor = maxTorque * Input.GetAxis("Vertical");
-        amountOfSteering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        
     }
     // Update is called once per frame
     void FixedUpdate()

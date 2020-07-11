@@ -18,6 +18,7 @@ public class ManualController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-
+        motor.setSteering(horizontal);
+        motor.setMotor(vertical);
     }
 }
