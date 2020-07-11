@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 1585512605631216288}
   - component: {fileID: 1585512605631216295}
   - component: {fileID: 1585512605631216294}
+  - component: {fileID: 234088518}
   m_Layer: 5
   m_Name: TurnLeft
   m_TagString: Untagged
@@ -274,8 +275,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 234088518}
+        m_MethodName: GiveCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -285,6 +286,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!114 &234088518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585512605631216292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db6c7480b8446a499e9411bac4a32ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command: 3
 --- !u!1 &2045964930826560622
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +388,7 @@ GameObject:
   - component: {fileID: 1591238313540236997}
   - component: {fileID: 7807872848084129057}
   - component: {fileID: 8567211432873452015}
+  - component: {fileID: 7867460860445435735}
   m_Layer: 5
   m_Name: SwerveRight
   m_TagString: Untagged
@@ -480,8 +495,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 7867460860445435735}
+        m_MethodName: GiveCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -490,7 +505,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+--- !u!114 &7867460860445435735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933050172453001463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db6c7480b8446a499e9411bac4a32ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command: 1
 --- !u!1 &3072475733826595949
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +531,7 @@ GameObject:
   - component: {fileID: 7434530547972080680}
   - component: {fileID: 5133890924003003258}
   - component: {fileID: 5292254738447960935}
+  - component: {fileID: 2509844539256047398}
   m_Layer: 5
   m_Name: TurnRight
   m_TagString: Untagged
@@ -609,8 +638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 2509844539256047398}
+        m_MethodName: GiveCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -619,7 +648,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+--- !u!114 &2509844539256047398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072475733826595949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db6c7480b8446a499e9411bac4a32ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command: 4
 --- !u!1 &3134474217709203431
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +794,7 @@ GameObject:
   - component: {fileID: 4220359847076194174}
   - component: {fileID: 581164021881497494}
   - component: {fileID: 9190239972898878856}
+  - component: {fileID: 2053864960}
   m_Layer: 5
   m_Name: SwerveLeft
   m_TagString: Untagged
@@ -858,8 +901,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 2053864960}
+        m_MethodName: GiveCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -868,7 +911,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+--- !u!114 &2053864960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330212885557436511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db6c7480b8446a499e9411bac4a32ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command: 0
 --- !u!1 &7418250058445493077
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +937,7 @@ GameObject:
   - component: {fileID: 594531295644920310}
   - component: {fileID: 5095851341850304094}
   - component: {fileID: 7673616549842564664}
+  - component: {fileID: 1177880863}
   m_Layer: 5
   m_Name: Brake
   m_TagString: Untagged
@@ -987,8 +1044,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1177880863}
+        m_MethodName: GiveCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -997,7 +1054,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+--- !u!114 &1177880863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418250058445493077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db6c7480b8446a499e9411bac4a32ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command: 2
 --- !u!1 &8438777922824233628
 GameObject:
   m_ObjectHideFlags: 0
