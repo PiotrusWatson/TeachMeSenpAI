@@ -50,7 +50,7 @@ public class DashboardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Jump")){
+        if (Input.GetKey(KeyCode.LeftControl)){
             toggleDashboard(true);
             mouseLook.enabled = false;
         }
@@ -79,11 +79,11 @@ public class DashboardController : MonoBehaviour
     void toggleDashboard(bool isActive){
          foreach (Transform child in canvas.transform){
                 if (child.gameObject.CompareTag("Buttons")){
-                    child.gameObject.SetActive(isActive);
+                    child.gameObject.SetActive(isActive);   
                 }
-                else{
-                    child.gameObject.SetActive(!isActive);
-                }
+                //else{
+                //    child.gameObject.SetActive(!isActive);
+                //}
             }
     }
 }
