@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: d8efcf7a7be0a84e2a7fcbbefcedf6af
+  - enabled: 1
+    path: Assets/Scenes/PiotrusTestScene.unity
+    guid: 8aaa8fcfe4811aa40b9339d7948ccbfa
   m_configObjects: {}
