@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ProfitScore : MonoBehaviour
 {
     public int profitScore;
     public TextMeshProUGUI profitScoreText;
+
+    public static bool win = false;
 
     private void Start()
     {
@@ -24,7 +27,8 @@ public class ProfitScore : MonoBehaviour
 
         if (profitScore < 0)
         {
-            Debug.Log("GAME OVER!!! NO PROFIT!!!");
+            SceneManager.LoadScene(2);
+
         }
     }
 }

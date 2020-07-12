@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PiotrusTestScene.unity
     guid: 8aaa8fcfe4811aa40b9339d7948ccbfa
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: 1a9ab71e5d958505e8270df87fb4eddd
   m_configObjects: {}

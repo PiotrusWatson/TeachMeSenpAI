@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 // Treats all of its children as markers
@@ -27,8 +28,10 @@ public class GoalPathScript : MonoBehaviour
     {
 
         if (markers.Count == 0) {
-            Debug.Log("Complete");
-            GameObject.Find("LevelCompleteText").GetComponent<Text>().enabled = true;
+            // Debug.Log("Complete");
+            // GameObject.Find("LevelCompleteText").GetComponent<Text>().enabled = true;
+            ProfitScore.win = true;
+            SceneManager.LoadScene(2);
         }
         List<GameObject> markersToRemove = new List<GameObject>();
         foreach (GameObject marker in markers)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WatchdogBar : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class WatchdogBar : MonoBehaviour
     /*Game over function called when the intolerance is maxed out*/
     private void exceededWatchdogTolerance ()
     {
-        Debug.Log("GAME OVER!!!");
+        
+        SceneManager.LoadScene(2);
     }
 }
