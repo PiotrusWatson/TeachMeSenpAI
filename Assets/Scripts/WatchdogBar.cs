@@ -18,7 +18,7 @@ public class WatchdogBar : MonoBehaviour
 
 
         /*Have the slider and decrease over time, increase when CTRL is pressed*/
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.Tab))
             slider.value += increaseRate;
         else
             slider.value -= decayRate;

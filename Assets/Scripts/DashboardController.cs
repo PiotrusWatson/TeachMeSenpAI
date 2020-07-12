@@ -12,6 +12,8 @@ public class DashboardController : MonoBehaviour
     GameObject topDownCamera;
     GameObject mainCamera;
     GameObject buttonDashboard;
+
+    public GameObject goals;
     
     SmoothMouseLook mouseLook;
 
@@ -60,10 +62,17 @@ public class DashboardController : MonoBehaviour
         if (Input.GetButton("Tab")){
             topDownCamera.SetActive(true);
             mainCamera.SetActive(false);
+
+            // set all goal markers to rendered
+            goals.GetComponent<GoalPathScript>().renderGoalMarkers(true);
         }
-        else{
+        else
+        {
             topDownCamera.SetActive(false);
             mainCamera.SetActive(true);
+
+            // set all goal markers to unrendered
+            goals.GetComponent<GoalPathScript>().renderGoalMarkers(false);
         }
     }
 

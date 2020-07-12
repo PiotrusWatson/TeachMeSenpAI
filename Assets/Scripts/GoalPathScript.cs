@@ -27,18 +27,29 @@ public class GoalPathScript : MonoBehaviour
     {
 
         if (markers.Count == 0) {
-            // Debug.Log("Complete");
+            Debug.Log("Complete");
             GameObject.Find("LevelCompleteText").GetComponent<Text>().enabled = true;
-        } 
-
+        }
+        List<GameObject> markersToRemove = new List<GameObject>();
         foreach (GameObject marker in markers)
         {
             if (Vector3.Distance(playerCar.transform.position, marker.transform.position) < markDistance)
             {
-                markers.Remove(marker);
-                // Debug.Log("Bam");
+                marker.GetComponent<MeshRenderer>().enabled = false;
+                markersToRemove.Add(marker);
+                Debug.Log("Bam");
             }
         }
+
+        foreach (GameObject marker in markersToRemove)
+            markers.Remove(marker);
         
+    }
+
+
+    public void renderGoalMarkers (bool render)
+    {
+        foreach (GameObject marker in markers)
+            marker.GetComponent<MeshRenderer>().enabled = render;
     }
 }

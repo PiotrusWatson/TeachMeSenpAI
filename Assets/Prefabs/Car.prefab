@@ -808,6 +808,7 @@ MonoBehaviour:
   swervingMaxTime: 1.5
   brakingMaxTime: 3
   slowingMaxTime: 0
+  speedUpRate: 0
 --- !u!114 &1837096266537909574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,6 +825,7 @@ MonoBehaviour:
     type: 3}
   topDownCameraTemplate: {fileID: 2934693640425808164, guid: d2bcc381c17032f4d825b45a2689d11e,
     type: 3}
+  goals: {fileID: 5132212089519390789, guid: 9604043ea9519194e8e278181c995f3f, type: 3}
 --- !u!1 &5536222551057354633
 GameObject:
   m_ObjectHideFlags: 0

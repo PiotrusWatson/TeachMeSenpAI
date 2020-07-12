@@ -23,6 +23,8 @@ public class AutomaticController : MonoBehaviour
     public float slowingMaxTime;
     private Command lastCommand;
     private float lastTimer = 0;
+    public float speedUpRate;
+    private float motorSpeed;
 
     
     Dictionary<Command, float> commandToMaxTime; 
@@ -53,6 +55,7 @@ public class AutomaticController : MonoBehaviour
     void Start()
     {
         commandTimer = maxCommandTimer;
+        motorSpeed = 1.0f;
     }
 
     // Update is called once per frame
@@ -82,8 +85,10 @@ public class AutomaticController : MonoBehaviour
             lastTimer = commandTimer;
         }
         else{
-            motor.setMotor(1.0f);
-            motor.setSteering(Random.Range(-0.5f, 0.5f));
+            if (motorSpeed < 1.0f)
+                motorSpeed += speedUpRate;
+                motor.setMotor(motorSpeed);
+            motor.setSteering(0f);
         }
 
     }
@@ -108,7 +113,8 @@ public class AutomaticController : MonoBehaviour
                 motor.setSteering(1f);
                 break;
             case Command.SLOW_DOWN:
-                motor.setMotor(0.3f);
+                motorSpeed *= -0.1f;
+                motor.setMotor(motorSpeed);
                 break;
 
         }
