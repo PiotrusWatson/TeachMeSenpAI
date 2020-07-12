@@ -61,10 +61,10 @@ public class AutomaticController : MonoBehaviour
         // Clamp z rotation between -30 and 30 degrees
         Vector3 rot = transform.eulerAngles;
         if(rot.z > 30){
-            rot -= new Vector3(0,0,1) * Time.deltaTime * 10;
+            rot -= new Vector3(0,0,1) * Time.deltaTime * 20;
             transform.eulerAngles = rot;
         } else if(rot.z < -30){
-            rot += new Vector3(0,0,1) * Time.deltaTime * 10;
+            rot += new Vector3(0,0,1) * Time.deltaTime * 20;
             transform.eulerAngles = rot;
         }
         
