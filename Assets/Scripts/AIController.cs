@@ -29,6 +29,8 @@ public class AIController : MonoBehaviour
 
     private void getRandomDestination ()
     {
+
+
         // get random position
         Vector3 randPos = Random.insideUnitSphere * maxDestinationDistance;
         randPos += transform.position;
