@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/* To add a command, add the logic here, change the enum (in automatic controller, and add a public function to carcommands).
-this is badly handled i know :(*/
+/* To add a command, add the logic here, change the enum (in automatic controller) */
 
-public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT}
+public enum Command{SWERVE_LEFT, SWERVE_RIGHT, BRAKE, TURN_LEFT, TURN_RIGHT, SLOW_DOWN}
+
 public class AutomaticController : MonoBehaviour
 {
 
@@ -20,16 +20,12 @@ public class AutomaticController : MonoBehaviour
     public float turningMaxTime;
     public float swervingMaxTime;
     public float brakingMaxTime;
+    public float slowingMaxTime;
     private Command lastCommand;
     private float lastTimer = 0;
 
     
     Dictionary<Command, float> commandToMaxTime; 
-
-    void remakeDictSmiley(){
-        
-    }
-    
     
 
     // Start is called before the first frame update
@@ -42,7 +38,8 @@ public class AutomaticController : MonoBehaviour
         {Command.SWERVE_RIGHT, swervingMaxTime},
         {Command.TURN_LEFT, turningMaxTime},
         {Command.TURN_RIGHT, turningMaxTime},
-        {Command.BRAKE, brakingMaxTime}
+        {Command.BRAKE, brakingMaxTime},
+        {Command.SLOW_DOWN, slowingMaxTime}
 
     };
 
@@ -61,6 +58,16 @@ public class AutomaticController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Clamp z rotation between -30 and 30 degrees
+        Vector3 rot = transform.eulerAngles;
+        if(rot.z > 30){
+            rot -= new Vector3(0,0,1) * Time.deltaTime * 10;
+            transform.eulerAngles = rot;
+        } else if(rot.z < -30){
+            rot += new Vector3(0,0,1) * Time.deltaTime * 10;
+            transform.eulerAngles = rot;
+        }
+        
         if (commandTimer < maxCommandTimer){
             commandTimer += Time.unscaledDeltaTime;
 
@@ -100,13 +107,12 @@ public class AutomaticController : MonoBehaviour
             case Command.TURN_RIGHT:
                 motor.setSteering(1f);
                 break;
+            case Command.SLOW_DOWN:
+                motor.setMotor(0.3f);
+                break;
 
         }
     }
-
-
-
-
 
     /* given a command, finds how long it should take, sets it
     also resets the command timer :)*/
@@ -114,32 +120,6 @@ public class AutomaticController : MonoBehaviour
         commandTimer = 0;
         maxCommandTimer = commandToMaxTime[command];
 
-    }
-
-    public void setMaxTimer(){
-
-    }
-
-
-
-    public void TurnLeftOnClick(){
-        GiveCommand(Command.TURN_LEFT);
-    }
-
-    public void TurnRightOnClick(){
-        GiveCommand(Command.TURN_RIGHT);
-    }
-
-    public void SwerveLeftOnClick(){
-        GiveCommand(Command.SWERVE_LEFT);
-    }
-
-    public void SwerveRightOnClick(){
-        GiveCommand(Command.SWERVE_RIGHT);
-    }
-
-    public void BrakeOnClick(){
-        GiveCommand(Command.BRAKE);
     }
 
 }

@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Blender Files/tree 8x8x0.5.obj.meta
 guid: dad56962226776049849e12100a30895
 =======
 guid: 986850af3058b32be918737d90fb5b0f
 >>>>>>> e2fc32e8b143cf8ed7e07dfd182faae31c7542a3:Assets/Blender Files/CityMap.obj.meta
-=======
-guid: f904a5d8fdcb20f4db267289159ffcc6
->>>>>>> e2fc32e8b143cf8ed7e07dfd182faae31c7542a3
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
