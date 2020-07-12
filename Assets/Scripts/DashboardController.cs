@@ -78,7 +78,6 @@ public class DashboardController : MonoBehaviour
 
     void toggleDashboard(bool isActive){
          foreach (Transform child in canvas.transform){
-             Debug.Log(child.name);
                 if (child.gameObject.CompareTag("Buttons")){
                     child.gameObject.SetActive(isActive);
                 }
