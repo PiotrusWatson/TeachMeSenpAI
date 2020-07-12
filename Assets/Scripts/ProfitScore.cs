@@ -7,7 +7,6 @@ public class ProfitScore : MonoBehaviour
     public int profitScore;
     public TextMeshProUGUI profitScoreText;
 
-
     private void Start()
     {
         profitScoreText.SetText("Profit: " + profitScore);
@@ -18,6 +17,7 @@ public class ProfitScore : MonoBehaviour
      * will cause game over if this occurs*/
     public void applyFine (int fineAmount)
     {
+
         profitScore -= fineAmount;
 
         profitScoreText.SetText("Profit: " + profitScore);

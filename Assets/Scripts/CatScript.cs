@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class CatScript : MonoBehaviour
 {
 
+    public int fine;
     public Transform start;
     public Transform end;
     public float sensitivity;
@@ -15,6 +16,7 @@ public class CatScript : MonoBehaviour
     Vector3 startGoal;
     Vector3 endGoal;
     Vector3 currentGoal;
+    ProfitScore scoreScript;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +32,16 @@ public class CatScript : MonoBehaviour
         currentGoal = endGoal;
 
         agent.autoBraking = false;
+
+        foreach (Transform child in GameObject.FindGameObjectWithTag("Canvas").transform) {
+            if (child.name == "ProfitScore")
+                scoreScript = child.GetComponent<ProfitScore>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(agent.remainingDistance);
          if (!agent.pathPending && agent.remainingDistance < sensitivity)
 
             if (currentGoal == endGoal) {
@@ -45,5 +51,11 @@ public class CatScript : MonoBehaviour
                 agent.SetDestination(endGoal);
                 currentGoal = endGoal;
             }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Player") {
+            scoreScript.applyFine(fine);
+        }
     }
 }
