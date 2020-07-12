@@ -22,6 +22,8 @@ public class AIController : MonoBehaviour
     {
         if (agent.remainingDistance == 0f)
             getRandomDestination();
+        
+
     }
 
 
@@ -29,6 +31,7 @@ public class AIController : MonoBehaviour
     {
         // get random position
         Vector3 randPos = Random.insideUnitSphere * maxDestinationDistance;
+        randPos += transform.position;
         NavMeshHit hit;
         NavMesh.SamplePosition(randPos, out hit, maxDestinationDistance, NavMesh.AllAreas);
         destination = hit.position;
